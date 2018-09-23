@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: testistic-ui-service
+spec:
+  selector:
+    app: testistic-ui
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+  type: LoadBalancer
+status:
+  loadBalancer: {}

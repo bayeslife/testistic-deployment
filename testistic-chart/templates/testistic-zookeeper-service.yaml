@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: testistic-zookeeper
+spec:
+  selector:
+    app: testistic-zookeeper
+  ports:
+  - protocol: TCP
+    port: 2181
+    targetPort: 2181
