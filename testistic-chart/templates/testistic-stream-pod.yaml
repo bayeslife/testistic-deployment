@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: testistic-stream
+  labels:
+    app: testistic-stream
+    tier: backend
+spec:
+  containers:
+  - name: testistic-stream
+    image: gcr.io/testistic-216703/testistic-stream:latest
+    env:
+    - name: KAFKASERVICE
+      value: "testistic-kafka:9092"
+    - name: DEBUG
+      value: "kafka-node:*,kafka-client,testistic-api,testistic-repository"
