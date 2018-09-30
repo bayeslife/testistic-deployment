@@ -16,3 +16,10 @@ spec:
       value: "testistic-zookeeper:2181"
     - name: KAFKA_ADVERTISED_HOST_NAME
       value: "testistic-kafka"
+    volumeMounts:
+      - mountPath: /kafka
+        name: testistic-mounted-volume
+  volumes:
+    - name: testistic-mounted-volume
+      persistentVolumeClaim:
+        claimName: testistic-volume-claim

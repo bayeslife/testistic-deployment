@@ -14,3 +14,5 @@ spec:
       value: "testistic-kafka:9092"
     - name: DEBUG
       value: "kafka-node:*,kafka-client,testistic-api,testistic-repository"
+
+

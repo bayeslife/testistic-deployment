@@ -11,3 +11,10 @@ spec:
     image: wurstmeister/zookeeper
     ports:
     - containerPort: 2181
+    volumeMounts:
+      - mountPath: /opt/zookeeper-3.4.9/data
+        name: testistic-mounted-volume
+  volumes:
+    - name: testistic-mounted-volume
+      persistentVolumeClaim:
+        claimName: testistic-volume-claim

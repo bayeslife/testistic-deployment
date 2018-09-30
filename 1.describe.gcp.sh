@@ -9,3 +9,6 @@ kubectl config current-context
 
 kubectl get pods
 kubectl get services
+
+# Details of the persistent volume claim
+kubectl describe pvc

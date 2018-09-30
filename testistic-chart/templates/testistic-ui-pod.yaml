@@ -1,24 +1,15 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Pod
 metadata:
-  name: testistic-ui-deployment
+  name: testistic-ui
   labels:
-    app: testistic-ui-deployment
+    app: testistic-ui
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: testistic-ui
-  template:
-    metadata:
-      labels:
-        app: testistic-ui
-    spec:
-      containers:
-      - name: testistic-ui
-        image: gcr.io/testistic-216703/testistic-ui:v0.1.0
-        ports:
-        - containerPort: 8080
-        env:
-        - name: TESTISTIC_API_HOST
-          value: "testistic-api"
+  containers:
+  - name: testistic-ui
+    image: gcr.io/testistic-216703/testistic-ui:v0.1.0
+    ports:
+    - containerPort: 8080
+    env:
+    - name: TESTISTIC_API_HOST
+      value: "testistic-api"
