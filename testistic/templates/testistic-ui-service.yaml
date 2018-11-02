@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: testistic-{{ .Values.purpose | lower }}-{{ .Values.audience | lower }}-ui-service
+spec:
+  selector:
+    app: testistic-{{ .Values.purpose | lower }}-{{ .Values.audience | lower }}-ui
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+  type: LoadBalancer
+status:
+  loadBalancer: {}

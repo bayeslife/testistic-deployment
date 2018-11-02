@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: testistic-ui
+  name: testistic-{{ .Values.purpose | lower }}-{{ .Values.audience | lower }}-ui
   labels:
-    app: testistic-ui
+    app: testistic-{{ .Values.purpose | lower }}-{{ .Values.audience | lower }}-ui
 spec:
   containers:
   - name: testistic-ui

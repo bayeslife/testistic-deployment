@@ -1,0 +1,4 @@
+
+export UI_PORT=8080
+export UI_IP=$(kubectl get svc --namespace default testistic-ui-service -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+echo http://$UI_IP:$UI_PORT

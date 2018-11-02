@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: testistic-zookeeper
+  name: testistic-{{ .Values.purpose | lower }}-{{ .Values.audience | lower }}-zookeeper
   labels:
-    app: testistic-zookeeper
+    app: testistic-{{ .Values.purpose | lower }}-{{ .Values.audience | lower }}-zookeeper
     tier: backend
 spec:
   containers:

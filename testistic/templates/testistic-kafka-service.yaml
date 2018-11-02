@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: testistic-{{ .Values.purpose | lower }}-{{ .Values.audience | lower }}-kafka
+spec:
+  selector:
+    app: testistic-{{ .Values.purpose | lower }}-{{ .Values.audience | lower }}-kafka
+  ports:
+  - protocol: TCP
+    port: 9092
+    targetPort: 9092

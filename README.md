@@ -11,10 +11,18 @@ A kubernetes cluster deployed into GCP which includes
 ### Provision
 `1.up.gcp.sh` - Bring up a cluster
 
-`1.up.helm.sh` - Deploy the kubernetes specs
+`2.up.helm.sh` - Deploy the kubernetes specs using helm
+
+### View Status
+`1.describe.gcp.sh` - Describes the cluster
+`2.describe.helm.sh` - Describes the release
 
 ### Tear down
 `1.down.gcp.sh` - Destroys the cluster
+
+## Environments
+
+Current set up is to create a Development environment but you can change the 0-variables.sh ENVIRONMENT to operate on 'development' or 'production' 
 
 ## Persistence
 

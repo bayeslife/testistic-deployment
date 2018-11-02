@@ -1,5 +1,8 @@
+. ./0-variables.sh
 
+echo "Release"
+helm list
 
-#kubectl get deployments
+read -p "Enter to see manifest for development"
 
-kubectl rollout status deployment/testestic-api-deployment
+helm get manifest ${ENVIRONMENT}

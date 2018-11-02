@@ -1,19 +1,24 @@
 
-#cd testistic-chart
+. ./0-variables.sh
 
-kubectl delete -f ./testistic-chart/templates/testistic-ui-pod.yaml
-kubectl delete -f ./testistic-chart/templates/testistic-ui-service.yaml
-
-kubectl delete -f ./testistic-chart/templates/testistic-api-pod.yaml
-kubectl delete -f ./testistic-chart/templates/testistic-api-service.yaml
+helm delete --purge ${ENVIRONMENT}
 
 
-kubectl delete -f ./testistic-chart/templates/testistic-stream-pod.yaml
+#cd testistic
 
-kubectl delete -f ./testistic-chart/templates/testistic-kafka-pod.yaml
-kubectl delete -f ./testistic-chart/templates/testistic-kafka-service.yaml
+#kubectl delete -f ./testistic/templates/testistic-ui-pod.yaml
+#kubectl delete -f ./testistic/templates/testistic-ui-service.yaml
 
-kubectl delete -f ./testistic-chart/templates/testistic-zookeeper-pod.yaml
-kubectl delete -f ./testistic-chart/templates/testistic-zookeeper-service.yaml
+#kubectl delete -f ./testistic/templates/testistic-api-pod.yaml
+#kubectl delete -f ./testistic/templates/testistic-api-service.yaml
 
-kubectl delete -f ./testistic-chart/templates/testistic-volume.yaml
+
+#kubectl delete -f ./testistic/templates/testistic-stream-pod.yaml
+
+#kubectl delete -f ./testistic/templates/testistic-kafka-pod.yaml
+#kubectl delete -f ./testistic/templates/testistic-kafka-service.yaml
+
+#kubectl delete -f ./testistic/templates/testistic-zookeeper-pod.yaml
+#kubectl delete -f ./testistic/templates/testistic-zookeeper-service.yaml
+
+#kubectl delete -f ./testistic/templates/testistic-volume.yaml

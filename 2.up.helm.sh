@@ -1,18 +1,24 @@
 
-cd testistic-chart
+. ./0-variables.sh
 
-kubectl create -f ./testistic-chart/templates/testistic-volume.yaml
+#This installs as well as upgrades
+helm upgrade --install ${ENVIRONMENT} -f customer/public.yaml -f environment/${ENVIRONMENT}.yaml testistic
 
-kubectl create -f ./testistic-chart/templates/testistic-zookeeper-pod.yaml
-kubectl create -f ./testistic-chart/templates/testistic-zookeeper-service.yaml
 
-kubectl create -f ./testistic-chart/templates/testistic-kafka-pod.yaml
-kubectl create -f ./testistic-chart/templates/testistic-kafka-service.yaml
+#cd testistic-chart
 
-kubectl create -f ./testistic-chart/templates/testistic-api-pod.yaml
-kubectl create -f ./testistic-chart/templates/testistic-api-service.yaml
+#kubectl create -f ./testistic-chart/templates/testistic-volume.yaml
 
-kubectl create -f ./testistic-chart/templates/testistic-ui-pod.yaml
-kubectl create -f ./testistic-chart/templates/testistic-ui-service.yaml
+#kubectl create -f ./testistic-chart/templates/testistic-zookeeper-pod.yaml
+#kubectl create -f ./testistic-chart/templates/testistic-zookeeper-service.yaml
 
-kubectl create -f ./testistic-chart/templates/testistic-stream-pod.yaml
+#kubectl create -f ./testistic-chart/templates/testistic-kafka-pod.yaml
+#kubectl create -f ./testistic-chart/templates/testistic-kafka-service.yaml
+
+#kubectl create -f ./testistic-chart/templates/testistic-api-pod.yaml
+#kubectl create -f ./testistic-chart/templates/testistic-api-service.yaml
+
+#kubectl create -f ./testistic-chart/templates/testistic-ui-pod.yaml
+#kubectl create -f ./testistic-chart/templates/testistic-ui-service.yaml
+
+#kubectl create -f ./testistic-chart/templates/testistic-stream-pod.yaml
